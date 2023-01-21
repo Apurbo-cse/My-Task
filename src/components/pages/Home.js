@@ -42,7 +42,8 @@ const Home = () => {
       priority,
     };
     const taskData = task;
-    taskData.push(taskItem);
+    // taskData.push(taskItem);
+    taskData.unshift(taskItem);
     setTask(taskData);
     setTitle("");
     setDescription("");
