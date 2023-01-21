@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import TaskList from "../common/TaskList";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <>
+      <TaskList />
+    </>
+  );
+};
 
-export default Home
+export default Home;
