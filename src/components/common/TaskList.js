@@ -4,7 +4,16 @@ import { Table } from "react-bootstrap";
 const TaskList = () => {
   return (
     <>
-      <h4 className="mt-5 mb-2">My Task List</h4>
+      <div className="d-flex justify-content-between align-items-center mt-4 mb-2">
+        <div className="float-left">
+          <h4>My Task List</h4>
+        </div>
+        <div className="float-right">
+          <button className="btn btn-warning">
+            <i className="fa fa-edit"></i> Create Task
+          </button>
+        </div>
+      </div>
       <Table striped bordered hover>
         <thead className="bg-info">
           <tr>
@@ -22,8 +31,12 @@ const TaskList = () => {
             <td>Desc</td>
             <td>Low</td>
             <td>
-              <i className="fa fa-pencil pointer text-info " title="Edit Task"></i>
-              <i className="fa fa-trash pointer text-danger mx-2 " title="Delete Task"></i>
+              <button className="btn btn-info ms-3">
+                <i className="fa fa-pencil" title="Edit Task"></i>
+              </button>
+              <button className="btn btn-danger ms-3">
+                <i className="fa fa-trash" title="Delete Task"></i>
+              </button>
             </td>
           </tr>
         </tbody>
