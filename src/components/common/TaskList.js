@@ -4,9 +4,9 @@ import { Table } from "react-bootstrap";
 const TaskList = () => {
   return (
     <>
-      <h4>My Task List</h4>
+      <h4 className="mt-5 mb-2">My Task List</h4>
       <Table striped bordered hover>
-        <thead>
+        <thead className="bg-info">
           <tr>
             <th>#</th>
             <th>Title</th>
