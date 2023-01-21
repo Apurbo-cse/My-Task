@@ -12,24 +12,12 @@ const Home = () => {
 
   useEffect(() => {
     const data = [
-      {
-        id: 1,
-        title: "First Title",
-        description: "lorem ipsum",
-        priority: "High",
-      },
-      {
-        id: 2,
-        title: "Second Title",
-        description: "lorem ipsum",
-        priority: "Medium",
-      },
-      {
-        id: 3,
-        title: "Third Title",
-        description: "lorem ipsum",
-        priority: "Low",
-      },
+      // {
+      //   id: 1,
+      //   title: "First Title",
+      //   description: "lorem ipsum",
+      //   priority: "High",
+      // },
     ];
     setTask(data);
   }, []);
