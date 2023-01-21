@@ -1,42 +1,50 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
-import CreateTask from "../common/CreateTask";
-import TaskList from "../common/TaskList";
+import CreateTask from "../components/common/CreateTask";
+import TaskList from "../components/common/TaskList";
 
 const TaskListPages = () => {
   const [isCreateMode, setIsCreateMode] = useState(false);
   const [task, setTask] = useState([]);
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [priority, setPriority] = useState("");
-  // const [isAdded, setIsAdded] = useState(false);
+  const [name, setName] = useState("");
+  const [body, setBody] = useState("");
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
-    const data = [
-      // {
-      //   id: 1,
-      //   title: "First Title",
-      //   description: "lorem ipsum",
-      //   priority: "High",
-      // },
-    ];
-    setTask(data);
+    // call api and get data
+    initilializeData();
   }, []);
-  // isAdded
+
+  const initilializeData = () => {
+    //     const data = [
+    //       {
+    //         id: 1,
+    //         name: "First name",
+    //         body: "lorem ipsum",
+    //         email: "High",
+    //       },
+    //     ];
+    axios.get("https://jsonplaceholder.typicode.com/comments").then((res) => {
+      const data = res.data;
+      console.log("res", data);
+      setTask(data);
+    });
+    //     setTask(data);
+  };
+
   const Create = (e) => {
     e.preventDefault();
     const taskItem = {
-      title,
-      description,
-      priority,
+      name,
+      body,
+      email,
     };
     const taskData = task;
-    // taskData.push(taskItem);
     taskData.unshift(taskItem);
     setTask(taskData);
-    setTitle("");
-    setDescription("");
-    setPriority("");
-    // setIsAdded(true);
+    setName("");
+    setBody("");
+    setEmail("");
   };
   return (
     <>
@@ -48,12 +56,12 @@ const TaskListPages = () => {
             </div>
           </div>
           <CreateTask
-            title={title}
-            setTitle={(val) => setTitle(val)}
-            description={description}
-            setDescription={(val) => setDescription(val)}
-            priority={priority}
-            setPriority={(val) => setPriority(val)}
+            name={name}
+            setName={(val) => setName(val)}
+            body={body}
+            setBody={(val) => setBody(val)}
+            email={email}
+            setEmail={(val) => setEmail(val)}
             Create={(e) => Create(e)}
             onClickHandler={() => setIsCreateMode(isCreateMode ? false : true)}
           />

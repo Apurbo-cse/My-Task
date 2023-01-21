@@ -31,9 +31,9 @@ const Navbar = ({ props }) => {
                 <NavLink
                   className="nav-link active"
                   aria-current="page"
-                  to="/products"
+                  to="/task-details"
                 >
-                  Products
+                  Task Details
                 </NavLink>
               </li>
 

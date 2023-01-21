@@ -6,9 +6,11 @@ const TaskDetails = (props) => {
     <>
       <tr>
         <td>{index + 1}</td>
-        <td>{item.title}</td>
-        <td>{item.description}</td>
-        <td>{item.priority}</td>
+        <td>{item.name}</td>
+        <td>
+          <span className="limit">{item.body}</span>
+        </td>
+        <td>{item.email}</td>
         <td>
           <button className="btn btn-info ms-3">
             <i className="fa fa-pencil" title="Edit Task"></i>

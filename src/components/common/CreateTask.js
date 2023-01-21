@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const CreateTask = (props) => {
   const {
     Create,
-    title,
-    setTitle,
-    description,
-    setDescription,
-    priority,
-    setPriority,
+    name,
+    setName,
+    body,
+    setBody,
+    email,
+    setEmail,
     onClickHandler,
   } = props;
 
@@ -16,17 +16,17 @@ const CreateTask = (props) => {
     <>
       <form onSubmit={(e) => Create(e)} className="mb-4">
         <div className="form-group mb-1">
-          <label className="mb-1">Title</label>
+          <label className="mb-1">Name</label>
           <input
             className="form-control"
             type="text"
-            placeholder="Enter title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Enter name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
-          <small id="emailHelp" className="form-text text-muted">
+          {/* <small id="emailHelp" className="form-text text-muted">
             We'll never share your email with anyone else.
-          </small>
+          </small> */}
         </div>
         <div className="form-group mb-1">
           <label className="mb-1">Description</label>
@@ -34,23 +34,20 @@ const CreateTask = (props) => {
             className="form-control"
             type="text"
             rows={3}
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            value={body}
+            onChange={(e) => setBody(e.target.value)}
           />
         </div>
 
         <div className="form-group mb-1  ">
-          <label className="mb-1">Example select</label>
-          <select
+          <label className="mb-1">Email</label>
+          <input
             className="form-control"
-            value={priority}
-            onChange={(e) => setPriority(e.target.value)}
-          >
-            <option>Select priority</option>
-            <option value={"High"}>High</option>
-            <option value={"Medium"}>Medium</option>
-            <option value={"Low"}>Low</option>
-          </select>
+            type="email"
+            placeholder="Enter email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
 
         <button type="submit" className="mt-3 btn btn-primary">
@@ -62,7 +59,7 @@ const CreateTask = (props) => {
           className="mt-3 mx-3 btn btn-danger"
           onClick={() => onClickHandler()}
         >
-          Submit
+          Close
         </button>
       </form>
     </>
