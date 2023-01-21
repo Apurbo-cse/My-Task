@@ -59,23 +59,23 @@ const TaskList = () => {
             </div>
           </div>
           <form onSubmit={(e) => Create(e)} className="mb-4">
-            <div class="form-group">
+            <div className="form-group">
               <label for="exampleInputEmail1">Title</label>
               <input
-                class="form-control"
+                className="form-control"
                 type="text"
                 placeholder="Enter title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
               />
-              <small id="emailHelp" class="form-text text-muted">
+              <small id="emailHelp" className="form-text text-muted">
                 We'll never share your email with anyone else.
               </small>
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label for="exampleInputEmail1">Description</label>
               <textarea
-                class="form-control"
+                className="form-control"
                 type="text"
                 rows={3}
                 value={description}
@@ -83,10 +83,10 @@ const TaskList = () => {
               />
             </div>
 
-            <div class="form-group">
+            <div className="form-group">
               <label for="exampleFormControlSelect1">Example select</label>
               <select
-                class="form-control"
+                className="form-control"
                 value={priority}
                 onChange={(e) => setPriority(e.target.value)}
               >
@@ -97,7 +97,7 @@ const TaskList = () => {
               </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" className="btn btn-primary my-3">
               Submit
             </button>
           </form>
