@@ -16,20 +16,7 @@ const TaskListPages = () => {
   }, []);
 
   const initilializeData = () => {
-    //     const data = [
-    //       {
-    //         id: 1,
-    //         name: "First name",
-    //         body: "lorem ipsum",
-    //         email: "High",
-    //       },
-    //     ];
-    axios.get("https://jsonplaceholder.typicode.com/comments").then((res) => {
-      const data = res.data;
-      console.log("res", data);
-      setTask(data);
-    });
-    //     setTask(data);
+   
   };
 
   const Create = (e) => {
