@@ -4,7 +4,7 @@ const TaskDetails = (props) => {
   const { item, index } = props;
   return (
     <>
-      <tr key={index}>
+      <tr>
         <td>{index + 1}</td>
         <td>{item.title}</td>
         <td>{item.description}</td>

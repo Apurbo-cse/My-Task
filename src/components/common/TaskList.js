@@ -34,7 +34,7 @@ const TaskList = (props) => {
         </thead>
         <tbody>
           {task.map((item, index) => (
-            <TaskDetails item={item} index={index} />
+            <TaskDetails key={index} item={item} index={index} />
           ))}
         </tbody>
       </Table>
