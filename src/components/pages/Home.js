@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import CreateTask from "../common/CreateTask";
+// import CreateTask from "../common/CreateTask";
 import TaskList from "../common/TaskList";
 
 const Home = () => {
-  const [isCreateMode, setIsCreateMode] = useState(false);
+  // const [isCreateMode, setIsCreateMode] = useState(false);
   return (
     <>
-      {isCreateMode && (
+      {/* {isCreateMode && (
         <CreateTask
           onClick={() => setIsCreateMode(isCreateMode ? false : true)}
         />
@@ -26,7 +26,7 @@ const Home = () => {
             {isCreateMode ? "Close" : " Create"} Task
           </button>
         </div>
-      </div>
+      </div> */}
 
       <TaskList />
     </>
