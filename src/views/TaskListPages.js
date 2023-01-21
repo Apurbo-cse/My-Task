@@ -1,7 +1,7 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import CreateTask from "../components/common/CreateTask";
 import TaskList from "../components/common/TaskList";
+import { getTaskData } from "../services/TaskService";
 
 const TaskListPages = () => {
   const [isCreateMode, setIsCreateMode] = useState(false);
@@ -16,7 +16,8 @@ const TaskListPages = () => {
   }, []);
 
   const initilializeData = () => {
-   
+    const data = getTaskData;
+    console.log("data", data);
   };
 
   const Create = (e) => {
