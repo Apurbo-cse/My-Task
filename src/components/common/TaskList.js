@@ -1,8 +1,9 @@
 import React from "react";
 import { Table } from "react-bootstrap";
+import TaskDetails from "./TaskDetails";
 
 const TaskList = (props) => {
-  const task = props.task;
+  const { task, onClickHandler, isCreateMode } = props;
   return (
     <>
       <div className="d-flex justify-content-between align-items-center mt-4 mb-2">
@@ -11,16 +12,12 @@ const TaskList = (props) => {
         </div>
         <div className="float-right">
           <button
-            className={` btn ${
-              props.isCreateMode ? "btn-danger" : "btn-warning"
-            }`}
-            onClick={() => props.setIsCreateMode()}
+            className={` btn ${isCreateMode ? "btn-danger" : "btn-warning"}`}
+            onClick={() => onClickHandler()}
           >
-            <i
-              className={`fa ${props.isCreateMode ? "fa-close" : "fa-edit"}`}
-            ></i>
+            <i className={`fa ${isCreateMode ? "fa-close" : "fa-edit"}`}></i>
             &nbsp;
-            {props.isCreateMode ? "Close" : "Create"}&nbsp;Task
+            {isCreateMode ? "Close" : "Create"}&nbsp;Task
           </button>
         </div>
       </div>
@@ -37,20 +34,7 @@ const TaskList = (props) => {
         </thead>
         <tbody>
           {task.map((item, index) => (
-            <tr key={index}>
-              <td>{index + 1}</td>
-              <td>{item.title}</td>
-              <td>{item.description}</td>
-              <td>{item.priority}</td>
-              <td>
-                <button className="btn btn-info ms-3">
-                  <i className="fa fa-pencil" title="Edit Task"></i>
-                </button>
-                <button className="btn btn-danger ms-3">
-                  <i className="fa fa-trash" title="Delete Task"></i>
-                </button>
-              </td>
-            </tr>
+            <TaskDetails item={item} index={index} />
           ))}
         </tbody>
       </Table>

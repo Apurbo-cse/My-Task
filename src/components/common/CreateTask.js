@@ -115,7 +115,7 @@ const CreateTask = () => {
       <TaskList
         task={task}
         isCreateMode={isCreateMode}
-        setIsCreateMode={() => setIsCreateMode(isCreateMode ? false : true)}
+        onClickHandler={() => setIsCreateMode(isCreateMode ? false : true)}
       />
     </>
   );
