@@ -4,16 +4,7 @@ import { Table } from "react-bootstrap";
 const TaskList = () => {
   return (
     <>
-      <div className="d-flex justify-content-between align-items-center mt-4 mb-2">
-        <div className="float-left">
-          <h4>My Task List</h4>
-        </div>
-        <div className="float-right">
-          <button className="btn btn-warning">
-            <i className="fa fa-edit"></i> Create Task
-          </button>
-        </div>
-      </div>
+      
       <Table striped bordered hover>
         <thead className="bg-info">
           <tr>
@@ -41,7 +32,7 @@ const TaskList = () => {
           </tr>
         </tbody>
       </Table>
-      
+
     </>
   );
 };

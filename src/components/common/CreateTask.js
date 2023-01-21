@@ -14,21 +14,22 @@ const CreateTask = () => {
           <Form.Label>Title</Form.Label>
           <Form.Control type="text" placeholder="Enter title" />
           {/* <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text> */}
+                      We'll never share your email with anyone else.
+                  </Form.Text> */}
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Example textarea</Form.Label>
           <Form.Control as="textarea" rows={3} />
         </Form.Group>
+
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Priroty</Form.Label>
           <Form.Select aria-label="Default select example">
-            <option>Select an option from this select menu</option>
-            <option value="first">first</option>
-            <option value="second">second</option>
-            <option value="third">third</option>
+            <option>Select Priroty</option>
+            <option value={"High"}>High</option>
+            <option value={"Medium"}>Medium</option>
+            <option value={"Low"}>Low</option>
           </Form.Select>
         </Form.Group>
 
