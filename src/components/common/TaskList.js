@@ -43,7 +43,7 @@ const TaskList = () => {
         </thead>
         <tbody>
           {task.map((item, index) => (
-            <tr>
+            <tr key={index}>
               <td>{index + 1}</td>
               <td>{item.title}</td>
               <td>{item.description}</td>
